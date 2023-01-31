@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="table" style="width:80%;margin-left:10%;">
+    <thead>
+        <h2 style="text-align:center;color:rgb(9, 9, 56);margin-top:30px;">STUDENTS DETAILS</h2>
+
+      <tr style="text-align:center;background-color:rgb(9, 9, 56);color:white;">
+        
+        <th scope="col">Student_Id</th>
+        <th scope="col">Student_Name</th>
+        <th scope="col">Student_Number</th>
+        <th scope="col">Student_Email</th>
+        <th scope="col">Student_Address</th>
+        <th scope="col">Student_Place</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      
+        {% for i in form %}
+        <tr style="text-align:center;">
+        
+        <td>{{i.student_id}}</td>
+        <td>{{i.student_name}}</td>
+        <td>{{i.student_phone}}</td>
+        <td>{{i.student_email}}</td>
+        <td>{{i.student_address}}</td>
+        <td>{{i.student_place}}</td>
+        <td><a href="{% url 'edit' %}?edit={{i.student_id}}" class=" my-2 my-sm-0 ml-3 mr-3 justify-content-end" style="text-decoration:none;;">EDIT</a>
+        </td>
+        <td><a href="{% url 'delete' %}?delete={{i.student_id}}" class=" my-2 my-sm-0 ml-3 mr-3 justify-content-end" style="text-decoration:none;;">DELETE</a>
+        </td>
+
+
+
+
+      </tr>
+       {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>signup</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body style="background:rgb(9, 9, 56);">
+        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="border:1px solid black;width:50%;margin-left:25%;margin-top:10%;text-align:center;background:white;">
+            <div>
+            <h2 style="color:rgb(9, 9, 56);">REGISTER HERE</h2>
+            </div>
+
+            <div class="px">
+                <p id="text"></p>
+            </div>
+
+        <form action="" method="POST">
+                {% csrf_token %}
+                <div>{% for message in messages %}
+                    <h3>{{message}}</h3>
+                    {% endfor %}</div>
+                <div>
+            <input type="text" id="name" name="name" placeholder="Name" onchange="validname()" required style="width:70%;padding:10px;">
+                </div><br>
+                <div>
+            <input type="email" id="email" name="email" placeholder="Email"  onchange="validemail()" style="width:70%;padding:10px;">
+                </div>
+                <div><br>
+            <input type="number" id="ph" name="phno" placeholder="Phone Number" onchange="validph()" style="width:70%;padding:10px;">
+            </div><br>
+            <div>
+            <input type="password" id="pass1" name="password" placeholder="Password" onchange="validpass()" style="width:70%;padding:10px;">
+            </div><br>
+            <div>
+            <input type="password" id="pass2" name="password2" placeholder="Confirm Password" onchange="validpassconform()" style="width:70%;padding:10px;">
+            </div><br>
+            <div style="margin-bottom:30px;">
+            <input type="submit" id="signup" value="SUBMIT" style="width:50%;padding:8px;">
+            </div>
+
+        </form> 
+        <div style="margin-bottom:20px;">
+          <a href="{% url 'login' %}" style="text-decoration:none;color:rgb(9, 9, 56)">Go back to Login</a>
+        </div>
+     </div>
+        
+        <script src="{% static 'js/signup.js' %}" async defer></script>
+    </body>
+</html>

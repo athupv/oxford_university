@@ -1,0 +1,58 @@
+{% extends 'mainbase.html' %}
+{% load static %}
+{% block title %}Contacts{% endblock %}
+{% block content %}
+{% if out == 1%}
+
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+<div class="alert alert-primary" role="alert">
+  Hello {{name}},We will contact you shortly!!!!
+</div>
+{% endif %}
+<div style="float:left;width:50%;">
+  <div style="margin-left:30%;margin-top:40px;"> 
+    <h4>CONTACT US</h4><br>
+  
+    <img src="{% static 'images/wicon.png' %}" style="width:25px;height:25px;"> 9876054321<br><br>
+    
+    <img src="{% static 'images/tele.png' %}" style="width:25px;height:25px;"> 7896543232<br><br>
+    
+    <img src="{% static 'images/mail.webp' %}" style="width:25px;height:25px;">oxford@gmail.com<br>
+
+    <h4>LOCATE US:</h4>
+    <div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=Bradford&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br><style>.mapouter{position:relative;text-align:right;height:200px;width:500px;}</style><a href="https://www.embedgooglemap.net">integrate google maps into website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:500px;}</style></div></div>
+  </div>
+</div>
+<div style="float:left;width:50%;margin-top:50px;">
+  <div style="margin-right:20px;">
+    <h3>How can we be of assistance?</h3>
+    <p>if you require clarification on anything,we are happy to help.</p>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group row">
+        <label for="name">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"  id="name" name="name" style="width:70%;padding:8px;">
+        </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="email">Email</label>
+        <div class="col-sm-10">
+          <input type="email"  class="form-control" id="email" name="email" style="width:70%;padding:8px;">
+        </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="phone">Phone</label>
+        <div class="col-sm-10">
+          <input type="number"  class="form-control"  id="phone" name="phone" style="width:70%;padding:8px;">
+        </div>
+      </div>
+      <input class="btn btn" type="submit" value="Submit" style="margin-left:30%;background-color:rgb(9, 9, 56);color:white;">
+    </form>
+  </div>
+
+{% endblock %}
+<script src="" async defer></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Staff{% endblock %}
+{% block content %}
+
+<h2 style="text-align:center;color:rgb(9, 9, 56);margin-top:30px;">STAFF DETAILS</h2>
+<table class="table" style="width:80%;margin-left:10%;">
+    <thead>
+      <tr style="text-align:center;background-color:rgb(9, 9, 56);color:white;">
+        
+        <th scope="col">Staff Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    {% for i in form %}
+    <tbody>
+    
+      <tr  style="text-align:center;">
+        
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        
+        <td>{{i.phno}}</td>
+
+      </tr>
+      
+     
+    </tbody>
+    {% endfor %}
+  </table>
+{% endblock %}

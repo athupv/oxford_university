@@ -1,0 +1,26 @@
+{% extends 'mainbase.html' %}
+{% block title %}gallery{% endblock %}
+{% block content %}
+{% load static %}
+<!-- <img src="https://d2zdtw8xsq1n0g.cloudfront.net/wp-content/uploads/2022/11/studencampus.png" class="img-fluid" alt="..." style="width:100%;height:100%;"> -->
+
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+<div class="idivv">
+  <div style="margin: 40px;">
+    <img src="{% static 'images/img2.jpg' %}" class="imgz" alt="" width="49%" style="height: 535px;border-radius:24px;border: 5px solid rgb(180, 175, 175);padding: 2px;">
+  <img src="{% static 'images/img3.jpg' %}" class="imgz" alt="" style="width: 49%;height: 535px;border-radius:24px;margin-left: 20px;border: 5px solid rgb(180, 175, 175);padding: 2px;">
+  <img src="{% static 'images/img4.jpg' %}" class="imgz" alt="" width="100%" style="height: 100vh;margin-top: 20px;border-radius: 24px;border: 5px solid rgb(180, 175, 175);padding: 2px;">
+  </div>
+</div>
+<style>
+  .imgz{
+    transition: 0.5s;
+  }
+  .imgz:hover{
+    box-shadow: 1px 1px 0.5px 1px ;
+    transform: translateY(-3px);
+  }
+</style>
+
+  {% endblock %}

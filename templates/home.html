@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static 'images/uni4.jpg' %}" class="d-block" alt="..." style="height:500px;width:100%;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/uni2.jpg' %}" class="d-block w-100" alt="..." style="height:500px;width:100%;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/uni3.webp' %}" class="d-block w-100" alt="..." style="height:500px;width:100%;">
+      </div>
+    </div>
+</div>
+<div>
+  <p class="text-dark">The oxford Uni is part of the prestigious Russell Group of universities, 
+    with outstanding facilities and the widest range of courses. We are highly respected across the globe as a centre of teaching excellence and 
+    innovative research.
+
+    With 25 Nobel Prize winners among our current and former staff and students, we have a history of world firsts and brilliant discoveries,
+     from splitting the atom to giving the world graphene.
+    
+    We are committed to world-class research, an outstanding learning and student experience, and social responsibility in everything we do.
+   </p>
+  </div>
+{% endblock %}

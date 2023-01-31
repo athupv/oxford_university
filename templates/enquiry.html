@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Enquiry{% endblock %}
+{% block content %}
+<h2 style="text-align:center;color:rgb(9, 9, 56);margin-top:30px;">ENQUIRY</h2>
+<table class="table" style="width:80%;margin-left:10%;">
+    <thead>
+      <tr style="text-align:center;background-color:rgb(9, 9, 56);color:white;">
+        
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in form %}
+      <tr style="text-align:center;">
+        
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phone}}</td>
+      </tr>
+      {% endfor %}
+   
+    </tbody>
+  </table>
+{% endblock %}

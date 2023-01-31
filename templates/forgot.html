@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>forgot</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="border:1px solid black;width:50%;margin-left:25%;margin-top:10%;text-align:center;background:white;">
+            <h3 style="color:rgb(9, 9, 56);">FORGOT PASSWORD<h3>
+                <div>
+                    <div class="px">
+                        <p id="text"></p>
+                    </div>
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div>{% for message in messages %}
+                            <h3 id="text">{{message}}</h3>
+                            {% endfor %}</div>
+                        <div>
+                        <div>
+                            <input type="text" placeholder="Email" id="email" name="email" style="width:70%;padding:10px;" onchange="validemail()">
+                        </div><br>
+                        <div>
+                            <input type="password" placeholder="password" id="pass1" name="password" style="width:70%;padding:10px;" onchange="validpass()">
+                        </div><br>
+                        <div>
+                            <input type="password" placeholder="confirm password" id="pass2" name="password2"  style="width:70%;padding:10px;" onchange="validpassconform()">
+                        </div><br>
+                        <div style="margin-bottom:30px;">
+                            <input type="submit" value="SUBMIT" style="width:50%;padding:8px;background-color:rgb(9, 9, 56);color:white;" id="signup"><br>
+    
+                        </div>
+                    </form>
+                </div>
+        </div>
+         <script src="{% static 'js/forgot.js' %}" async defer></script>
+    </body>
+</html>
